@@ -1,6 +1,7 @@
 package br.com.fivee.appfivee.model;
 
 import jakarta.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "tbl_evento")
@@ -19,6 +20,9 @@ public class Evento {
 
     @Column(name = "local_evento", nullable = false)
     private String local;
+
+    @Column(name = "data_evento")
+    private LocalDate data;
 
     public Integer getId() {
         return id;
@@ -50,5 +54,13 @@ public class Evento {
 
     public void setLocal(String local) {
         this.local = local;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
     }
 }

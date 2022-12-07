@@ -4,10 +4,7 @@ import br.com.fivee.appfivee.model.Usuario;
 import br.com.fivee.appfivee.service.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin("*")
@@ -22,12 +19,13 @@ public class UsuarioController {
             return ResponseEntity.status(201).body(user);
         return ResponseEntity.badRequest().build();
     }
+    
 
     @PostMapping("/login")
     public ResponseEntity<Usuario> validarLogin(@RequestBody Usuario usuario){
         Usuario user = service.validarUsuario(usuario);
         if(user != null)
-            return ResponseEntity.status(200).body(user);
+            return ResponseEntity.status(201).body(user);
         return ResponseEntity.badRequest().build();
     }
 }

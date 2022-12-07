@@ -8,4 +8,5 @@ public interface IUsuarioService {
 
     public Usuario cadastrarUsuario(Usuario usuario);
     public Usuario validarUsuario(Usuario usuario);
+
 }
