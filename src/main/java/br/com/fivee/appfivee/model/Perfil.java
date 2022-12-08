@@ -10,22 +10,22 @@ public class Perfil {
     @Column(name = "cpf", nullable = false)
     private String cpf;
 
-    @Column(name = "nome", nullable = false)
+    @Column(name = "nome", nullable = false, length = 60)
     private String nome;
 
-    @Column(name = "cidade")
+    @Column(name = "cidade", length = 45)
     private String cidade;
 
-    @Column(name = "distanciaRec")
-    private Integer distanciaRec;
+    @Column(name = "distancia")
+    private double distanciaRec;
 
-    @Column(name = "interesses")
+    @Column(name = "interesses", length = 45)
     private String interesses;
 
-    @Column(name = "gostoMusical")
+    @Column(name = "gosto_musical", length = 45)
     private String gostoMusical;
 
-    @Column(name = "tiposEventos")
+    @Column(name = "tipos_eventos", length = 45)
     private String tiposEventos;
 
     @OneToOne
@@ -56,12 +56,12 @@ public class Perfil {
         this.cidade = cidade;
     }
 
-    public Integer getDistanciaRec() {
+    public double getDistanciaRec() {
         return distanciaRec;
     }
 
-    public void setDistanciaRec(Integer distanciaRec) {
-        this.distanciaRec = distanciaRec;
+    public void setDistanciaRec(double distancia) {
+        this.distanciaRec = distancia;
     }
 
     public String getInteresses() {

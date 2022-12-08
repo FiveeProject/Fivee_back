@@ -19,6 +19,6 @@ public class IngressoServiceImpl implements IIngressoService{
 
     @Override
     public List<Ingresso> buscarIngressosId(Integer idEvento) {
-        return null;
+        return repo.findAllByEventoId(idEvento);
     }
 }

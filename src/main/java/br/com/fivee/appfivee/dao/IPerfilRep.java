@@ -9,6 +9,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IPerfilRep extends CrudRepository<Perfil, Integer> {
 
-    @Query(value = "select * from tbl_perfil where usuario.usuario = :usuario", nativeQuery = true)
-    public Perfil buscaUsuario (String usuario);
+    public Perfil findAllByUsuarioId(Integer id);
 }

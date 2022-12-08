@@ -13,17 +13,14 @@ public class PerfilServiceImpl implements IPerfilService{
 
     @Override
     public Perfil cadastrarNovoPerfil(Perfil perfil) {
-        if(perfil.getCpf().length() == 0 || perfil.getNome().length() == 0 || perfil.getUsuario() == null)
+        if(perfil.getCpf() == "" || perfil.getNome().length() == 0 || perfil.getUsuario() == null)
             return null;
         return repo.save(perfil);
     }
 
     @Override
-    public Perfil buscarPerfil(String usuario){
-        Perfil p = repo.buscaUsuario(usuario);
-        if(p != null)
-            return p;
-        return null;
+    public Perfil buscarPerfilUsuario(Integer id){
+        return repo.findAllByUsuarioId(id);
     }
 
     @Override

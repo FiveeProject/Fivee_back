@@ -19,11 +19,8 @@ public class PerfilController {
         return ResponseEntity.badRequest().build();
     }
 
-    @GetMapping("/perfil/{usuario}")
-    public ResponseEntity<Perfil> buscarPerfil(@PathVariable String usuario){
-        Perfil p = service.buscarPerfil(usuario);
-        if(p != null)
-            return ResponseEntity.status(201).body(p);
-        return ResponseEntity.badRequest().build();
+    @GetMapping("/perfil/{id}")
+    public ResponseEntity<Perfil> buscarPerfil(@PathVariable Integer id){
+        return ResponseEntity.ok(service.buscarPerfilUsuario(id));
     }
 }
