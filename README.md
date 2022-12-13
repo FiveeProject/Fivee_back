@@ -259,9 +259,15 @@ Entrada esperada
 }
 
 ---
-SpringBoot 3.0
-Java OpenJDK 19.0.1
-Maven 3.8.6
-MySQL
-
-
+ - Java OpenJDK 19.0.1
+ - Maven 3.8.6
+ - MySQL (Workbench)
+ - Postman (opcional)
+ 
+ #### Instalação (Tendo instalados todos os programas acima):
+ 
+  - Baixar o repositório do git;
+  - Abrir o model (fivee_modelDB.mwb) do banco no MySQL Workbench e executar o Forward engineering;
+  - Abrir o projeto maven em alguma IDE (recomendo IntelliJ);
+  - Esperar baixar as dependências;
+  - Executar o arquivo AppfiveApplication (appfivee\src\main\java\br\com\fivee\appfivee\AppfiveApplication.java);
